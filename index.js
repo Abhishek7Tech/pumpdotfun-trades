@@ -200,7 +200,7 @@ app.get("/", (req, res) => {
   res.status(200).send("Event received");
 });
 
-app.post("/swaps", (req, res) => {
+app.post("/webhook", (req, res) => {
   console.log("Req", req.body);
 });
 app.listen(port, () => {
