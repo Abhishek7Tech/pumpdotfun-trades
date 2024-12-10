@@ -196,12 +196,11 @@ const getWebhook = async () => {
 
 app.get("/", (req, res) => {
   res.send("Hello world");
-
-  res.status(200).send("Event received");
 });
 
 app.post("/webhook", (req, res) => {
   console.log("Req", req.body);
+  res.status(200).send({ msg: "Event received", data: req.body });
 });
 app.listen(port, () => {
   console.log("Listening to...", port);
